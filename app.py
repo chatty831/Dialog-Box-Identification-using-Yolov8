@@ -11,8 +11,9 @@ model = None
 original_image = None
 
 model_names = {
-    'Bounding Box v1' : 'segmented_dialog_box.pt',
-    'Bounding Box v2' : 'manhwa_best.pt'
+    'Bounding Box v1 (Manhwa)' : 'segmented_dialog_box.pt',
+    'Bounding Box v2 (Manhwa)' : 'manhwa_best.pt',
+    'Bounding Box v3 (Manga)' : 'Manga_best.pt'
     }
 
 
