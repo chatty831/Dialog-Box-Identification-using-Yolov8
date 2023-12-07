@@ -42,7 +42,7 @@ function GenerateImage() {
         })
 
         .catch(function (error) {
-            console.log('Error generating the image', error)
+            alert('Please select a model.')
         })
 }
 
