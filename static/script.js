@@ -27,7 +27,10 @@ function GenerateImage() {
     axios.get('/generate')
         .then(function (response) {
             // console.log('Image generated successfully', response.data.result)
-            
+            if (response.data.error) {
+                alert(response.data.error);
+                return;
+            }
             const changed_image_path = response.data.changed_image;
             console.log('The changed path', changed_image_path);
             const changed_image_element = document.getElementById("ChangedImagePreview");

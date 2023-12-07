@@ -89,6 +89,9 @@ def upload():
 @app.route('/generate')
 def get_result():
     global original_image_path, model
+    if model is None:
+        # You can customize the error message here
+        return jsonify({'error': 'Model not set. Please select a model.'}), 400
     changed_image_path = generate(original_image_path,model)
     print('before change', changed_image_path)
     
