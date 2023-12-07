@@ -1,0 +1,73 @@
+@charset "utf-8";
+
+body {
+    text-align: center;
+    background-color: black;
+    color: white;
+    margin: 0;
+    /* Remove default margin on body */
+}
+
+.container {
+    width: 100%;
+    /* Utilize all available space */
+    padding: 20px;
+    /* Add padding to the sides */
+    box-sizing: border-box;
+    /* Include padding and border in the element's total width and height */
+}
+
+#dialogBoxIdentifier {
+    font-size: 24px;
+}
+
+#fileForm {
+    margin-top: 20px;
+}
+
+
+#previewContainer {
+    width: 100%;
+    display: flex;
+    padding-top: 20px;
+    justify-content: space-around;
+}
+
+#originalPreview,
+#changedPreview {
+    max-width: 50%;
+    /* Each preview takes 50% of the container */
+    box-sizing: border-box;
+    /* Include padding and border in the element's total width and height */
+}
+
+#originalPreview img,
+#changedPreview img {
+    max-width: 670px;
+    height: auto;
+}
+
+.regform {
+    width: auto;
+    background-color: #182434;
+    margin: auto;
+    color: #FFFFFF;
+    padding: 10px 0px 10px 0px;
+    text-align: center;
+    border-radius: 15px 15px 15px 15px;
+}
+
+
+.main-form {
+    margin: auto;
+    padding-left: 50px;
+    padding-right: 50px;
+    padding-bottom: 20px;
+    color: #FFFFFF;
+    background-color: #000000;
+    position: absolute;
+    top: 95px;
+    left: auto;
+    width: 800px;
+}
+
