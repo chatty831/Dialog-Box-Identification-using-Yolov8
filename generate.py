@@ -8,7 +8,7 @@ def img_details(img_path):
     return os.path.splitext(os.path.basename(img_path))
 
     
-def generate(img_path,model):
+def generate(img_path,model,model_name):
     
     img = cv2.imread(img_path)
     img_h,img_w,_ = img.shape
@@ -77,6 +77,6 @@ def generate(img_path,model):
         img = cv2.polylines(img, [points], isClosed=True, color=(255,0,0), thickness=4)
     
     img_det = img_details(img_path)
-    path = f'./static/transforms/{img_det[0]}_changed{img_det[1]}'
+    path = f'./static/transforms/{model_name}_{img_det[0]}_changed{img_det[1]}'
     cv2.imwrite(path,img)
     return os.path.normpath(path)

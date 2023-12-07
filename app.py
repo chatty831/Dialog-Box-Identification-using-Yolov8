@@ -9,6 +9,7 @@ original_image_path = None
 changed_image_path = None
 model = None
 original_image = None
+model_name = None
 
 model_names = {
     'Bounding Box v1 (Manhwa)' : 'segmented_dialog_box.pt',
@@ -58,7 +59,7 @@ def index():
 
 @app.route('/send_model', methods=['POST'])
 def model_init():
-    global model
+    global model,model_name
     data= request.get_json()
     model_name = data.get('stringData')
     model_name = model_names[model_name]
@@ -89,11 +90,11 @@ def upload():
 
 @app.route('/generate')
 def get_result():
-    global original_image_path, model
+    global original_image_path, model, model_name
     if model is None:
         # You can customize the error message here
         return jsonify({'error': 'Model not set. Please select a model.'}), 400
-    changed_image_path = generate(original_image_path,model)
+    changed_image_path = generate(original_image_path,model,model_name)
     print('before change', changed_image_path)
     
     return jsonify({'result': 'Image generated successfully', 'changed_image': changed_image_path})
